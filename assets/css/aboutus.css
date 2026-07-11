@@ -1,0 +1,80 @@
+/* ==========================================================================
+   ABOUT US PAGE REMAKE MODULES
+   ========================================================================== */
+
+/* Thinner Accent Banner Height for Inner Page Content Flow */
+.about-hero {
+  position: relative;
+  height: 320px;
+  background: url("../images/GLASS1.jpg") no-repeat center center/cover;
+  overflow: hidden;
+}
+
+.inner-hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-hero h1 {
+  font-family: 'Syncopate', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* Vertical Double Image Grid Stack Engine */
+.about-imgs-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.about-img-frame {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--border-radius);
+  padding: 15px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.03);
+  box-sizing: border-box;
+}
+
+/* Frame specific accents for subtle layout balance */
+.spec-top {
+  border-top: 4px solid var(--primary);
+}
+
+.spec-bottom {
+  border-bottom: 4px solid var(--accent);
+}
+
+.about-stack-img {
+  max-width: 100%;
+  max-height: 160px; /* Limits excessive height growth to align perfectly */
+  object-fit: contain;
+  display: block;
+}
+
+/* Tablet and Smartphone Grid Stack Conversion Override */
+@media (max-width: 992px) {
+  .about-imgs-stack {
+    height: auto;
+  }
+  .about-stack-img {
+    max-height: 220px;
+  }
+}

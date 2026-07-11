@@ -1,0 +1,408 @@
+/* --- Corporate Architectural Variables --- */
+:root {
+  --primary: #1e3a8a;       /* Deep Structural Blue */
+  --primary-hover: #172554;
+  --accent: #d97706;        /* Structural Brass/Gold for premium alignment */
+  --dark: #0f172a;          /* Iron/Slate Dark */
+  --light-bg: #f8fafc;
+  --card-bg: rgba(255, 255, 255, 0.80); /* Frosted architectural glass look */
+  --text-main: #334155;
+  --border-radius: 4px;     /* Sharper corners mimic precision blueprinting & metal cut edges */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-main);
+  background: radial-gradient(circle at 10% 20%, #f1f5f9 0%, #f8fafc 100%);
+}
+
+/* --- Precision Header & Navigation --- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.98); /* Solid structural base */
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 8%;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+  max-width: 190px;
+  height: auto;
+  filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.2));
+}
+
+nav {
+  display: flex;
+  gap: 32px;
+}
+
+nav a {
+  position: relative;
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: uppercase; /* Clean corporate aesthetic */
+  letter-spacing: 1.5px;      /* Architectural tracking */
+  padding: 6px 0;
+  transition: color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+nav a:hover, nav a.active {
+  color: #ffffff;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent); /* Accent lines pull focus instantly */
+  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+nav a:hover::after, nav a.active::after {
+  width: 100%;
+}
+
+.strip-dark {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 50%, var(--primary) 100%);
+}
+
+/* --- Premium Architectural Hero Section --- */
+.hero {
+  background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9)), 
+              url("../GLASS1.jpg") no-repeat center center/cover;
+  padding: 130px 20px;
+  text-align: center;
+  color: #fff;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+.hero h1 {
+  font-family: 'Syncopate', sans-serif; /* Wide, structural, high-end look */
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 6px; /* High tracking for structural elegance */
+  margin: 0 0 16px 0;
+  color: #ffffff;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  margin: 0 auto;
+  max-width: 650px;
+  color: #cbd5e1;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+/* --- Layout Framing --- */
+.contact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: -60px auto 60px auto; 
+  padding: 0 20px;
+  position: relative;
+  z-index: 5;
+}
+
+/* --- Adding Framing Around Content Cards --- */
+.contact-info, .contact-form {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 50px 45px;
+  border-radius: var(--border-radius);
+  /* Sharp structural borders mimicking custom aluminum frames */
+  border: 1px solid rgba(15, 23, 42, 0.08); 
+  border-left: 5px solid var(--primary); /* Deep Blue structural anchor line */
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+
+}
+
+.contact-info:hover, .contact-form:hover {
+  transform: translateY(-6px);
+  border-left-color: var(--accent); /* Changes anchor from blue to brass gold on hover */
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.08);
+}
+
+/* --- More Structural Fields (Inputs) --- */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: var(--border-radius);
+  border: 1px solid #cbd5e1;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary);
+  background: #ffffff;
+  /* Crisp, industrial focus ring instead of a soft tech glow */
+  box-shadow: 0 0 0 1px var(--primary); 
+  outline: none;
+}
+
+.contact-info h2, .contact-form h2 {
+  font-family: 'Syncopate', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: 0 !important;
+  margin-bottom: 35px;
+  color: var(--dark);
+  position: relative;
+  display: inline-block;
+}
+
+/* The structural accent line underneath headers */
+.contact-info h2::after, .contact-form h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -12px;
+  width: 60px;
+  height: 4px;
+  background-color: var(--accent); /* Premium Brass Gold Line */
+}
+
+.contact-info p {
+  margin: 16px 0;
+  font-size: 1rem;
+  color: #475569;
+  border-bottom: 1px dashed #e2e8f0; /* Blueprint style segmentation grid lines */
+  padding-bottom: 12px;
+}
+
+.contact-info p:last-child {
+  border-bottom: none;
+}
+
+.contact-info strong {
+  color: var(--dark);
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- Clean Form Engineering --- */
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: var(--border-radius);
+  border: 1px solid #cbd5e1;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.12);
+  outline: none;
+}
+
+.contact-form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+/* Flat, Bold Corporate Solid CTA Buttons */
+.contact-form button {
+  background: var(--dark);
+  border: none;
+  padding: 16px 36px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  color: white;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  align-self: flex-start;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+.contact-form button:hover {
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.3);
+  transform: translateY(-2px);
+}
+
+#form-status {
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* --- Embedded Facade Map --- */
+.map {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.map iframe {
+  width: 100%;
+  height: 450px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e2e8f0;
+  display: block;
+}
+
+/* --- Action Scroll Back Button --- */
+#scrollToTop {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: var(--dark);
+  color: #fff;
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--border-radius);
+  font-size: 1.1rem;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+#scrollToTop:hover {
+  background-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+/* --- High-End Enterprise Footer --- */
+footer {
+  background: #0b0f19;
+  color: #64748b;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 2px solid var(--primary);
+  letter-spacing: 0.5px;
+}
+
+footer p {
+  margin: 8px 0;
+}
+
+footer p:first-child {
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+footer a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  margin: 0 8px;
+  font-weight: 500;
+}
+
+footer a:hover {
+  color: var(--accent);
+}
+
+/* --- Structural Responsiveness Systems --- */
+@media (max-width: 992px) {
+  header {
+    padding: 20px 4%;
+  }
+  nav {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 18px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .hero {
+    padding: 90px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .contact {
+    margin-top: -40px;
+    gap: 24px;
+  }
+
+  .contact-info, .contact-form {
+    padding: 30px 24px;
+  }
+
+  .contact-form button {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .map iframe {
+    height: 320px;
+  }
+}

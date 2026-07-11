@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Arnel Glass & Aluminum</title>
+
+  <!-- Modern Architectural Font Pairing: Montserrat (Body) & Syncopate (Headings) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Production Stylesheet -->
+  <link rel="stylesheet" href="assets/css/contact.css">
+</head>
+<body>
+  <!-- Precision Header & Navigation Structure -->
+  <header>
+    <img src="assets/images/logo.png" alt="Arnel Glass & Aluminum Logo" class="logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="product_and_services.html">Products & Services</a>
+      <a href="project_gallery.html">Projects</a>
+      <a href="#" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Linear Structural Stripe Component -->
+  <div class="strip-dark"></div>
+
+  <!-- Premium Architectural Hero Billboard -->
+  <section class="hero">
+    <h1>Get in Touch</h1>
+    <p>Providing durable, precision-engineered structural glass and aluminum solutions for your custom space.</p>
+  </section>
+
+  <!-- Core Layout Interface Segment -->
+  <section class="contact">
+    
+    <!-- Enterprise Information Profile Panel -->
+    <div class="contact-info">
+      <h2>Contact Us</h2>
+
+      <p>
+        <strong>Headquarters Address</strong> 
+        1635 Diamond St. Carpa, Sabang, Baliuag, Bulacan, Philippines
+      </p>
+
+      <p>
+        <strong>Direct Contact Lines</strong>
+        <span>+63 995 661 937</span><br>
+        <span>+63 916 257 820</span><br>
+        <span>+63 916 257 784</span>
+      </p>
+
+      <p>
+        <strong>Corporate Communications</strong> 
+        arnelglassaluminum@gmail.com
+      </p>
+      
+      <p>
+        <strong>Official Social Channels</strong> 
+        NeilTristanAbanador @ facebook.com
+      </p>
+    </div>
+
+    <!-- Client Request & Message Acquisition System -->
+    <div class="contact-form">
+      <h2>Message Us</h2>
+
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="tel" name="phone" placeholder="Contact Number" required>
+        <input type="text" name="purpose" id="purpose" placeholder="Project Purpose (e.g., Renovation, Installation)" required>
+        <textarea name="message" placeholder="Detailed Specifications / Message" required></textarea>
+        <button type="submit">Submit Request</button>
+      </form>
+
+      <p id="form-status"></p>
+    </div>
+  </section>
+
+  <!-- Embedded Project Location Facade Map -->
+  <div class="map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d303.63941838913996!2d120.9114655989705!3d14.966925223499603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397001151330d35%3A0x35fa49cddb3b88d8!2sDiamond%20St%2C%20Baliwag%2C%20Bulacan!5e1!3m2!1sen!2sph!4v1763663155656!5m2!1sen!2sph"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+  <!-- Action Scroll Back Button Component -->
+  <button id="scrollToTop" title="Go to top">↑</button>
+
+  <!-- High-End Enterprise Footer Block -->
+  <footer>
+    <p>© 2025 Arnel Glass & Aluminum. All Rights Reserved.</p>
+    <p>Carpa, Sabang, Baliuag, Bulacan, Philippines</p>
+    <p>📞 (0912) 345-6789 &nbsp;|&nbsp; ✉️ arnelglassaluminum@gmail.com</p>
+    <p>
+      Connect Globally: 
+      <a href="#">Facebook</a> | 
+      <a href="#">Instagram</a>
+    </p>
+  </footer>
+
+  <!-- Contact Form Email Delivery Engine (EmailJS Injection) -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    emailjs.init("GeNVJ5NS55GSAppaP");
+
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const time = new Date().toLocaleString("en-US", { timeZone: "PST" });
+
+      const templateParams = {
+        name: this.name.value,
+        email: this.email.value,
+        phone: this.phone.value,
+        purpose: this.purpose.value,
+        message: this.message.value,
+        time: time
+      };
+
+      emailjs.send("service_0vxx489", "template_zve6brm", templateParams)
+        .then(() => {
+          const formStatus = document.getElementById("form-status");
+          formStatus.style.color = "#16a34a";
+          formStatus.innerHTML = "MESSAGE DISPATCHED SUCCESSFULLY.";
+          this.reset();
+        })
+        .catch(error => {
+          const formStatus = document.getElementById("form-status");
+          formStatus.style.color = "#dc2626";
+          formStatus.innerHTML = "TRANSMISSION FAILED. PLEASE TRY AGAIN.";
+          console.error("EmailJS Error:", error);
+        });
+    });
+
+    // Precision Page Position Monitors
+    window.onscroll = function () {
+      const btn = document.getElementById("scrollToTop");
+      btn.style.display =
+        document.body.scrollTop > 100 || document.documentElement.scrollTop > 100
+          ? "block"
+          : "none";
+    };
+
+    document.getElementById("scrollToTop").addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
+</body>
+</html>
